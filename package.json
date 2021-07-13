@@ -6,6 +6,8 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.1",
+    "@material-ui/icons": "^4.11.2",
     "@reduxjs/toolkit": "^1.6.0",
     "@types/react-router-config": "^5.0.2",
     "@types/react-router-dom": "^5.1.7",

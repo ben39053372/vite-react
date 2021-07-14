@@ -3,7 +3,7 @@ import { renderRoutes } from 'react-router-config';
 import { routes } from './routes';
 
 function App() {
-  return (<div>{renderRoutes(routes)}</div>)
+  return <>{renderRoutes(routes)}</>;
 }
 
 export default App;

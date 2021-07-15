@@ -1,0 +1,15 @@
+.background {
+  @apply flex bg-blue-200 h-screen w-screen;
+}
+
+.paper {
+  @apply bg-white px-8 pt-6 pb-8 container rounded w-full max-w-xs m-auto;
+}
+
+.actions {
+  @apply flex my-3 items-center justify-between;
+}
+
+.textButton {
+  @apply font-bold text-blue-500;
+}

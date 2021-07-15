@@ -5,3 +5,23 @@
 #root {
   min-height: 100vh;
 }
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+
+  h2 {
+    @apply text-xl;
+  }
+
+  h3 {
+    @apply text-lg;
+  }
+}
+
+@layer utilities {
+  .error {
+    color: theme('colors.error');
+  }
+}

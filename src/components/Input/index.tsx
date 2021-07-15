@@ -8,12 +8,5 @@ interface InputProps
   > {}
 
 export const Input = (props: InputProps) => {
-  return (
-    <input
-      className="input"
-      id="username"
-      type="text"
-      placeholder="Username"
-      {...props}></input>
-  );
+  return <input className="input" {...props}></input>;
 };

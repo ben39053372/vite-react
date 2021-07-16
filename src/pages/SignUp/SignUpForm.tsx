@@ -5,7 +5,7 @@ import { Label } from '../../components/Label';
 import { Input } from '../../components/Input';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../components/Button';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 interface SignUpFormValues {
   email: string;
@@ -132,7 +132,9 @@ export const SignUpForm = () => {
       )}
 
       <div className="actions">
-        <a className="textButton">{t('I have account')}</a>
+        <Link className="textButton" to="/login">
+          {t('I have account')}
+        </Link>
         <Button onClick={handleSignInClick} type="submit">
           {t('Sign In')}
         </Button>

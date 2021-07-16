@@ -84,7 +84,7 @@ export const LoginForm = () => {
 
       <div className="actions">
         <a className="textButton">{t('Forgot Password')}?</a>
-        <Button onClick={handleSignInClick} type="submit">
+        <Button onClick={handleSignInClick} variant="primary" type="submit">
           {t('Sign In')}
         </Button>
       </div>

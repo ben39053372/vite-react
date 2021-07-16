@@ -24,4 +24,23 @@
   .error {
     color: theme('colors.error');
   }
+
+  .google {
+    background-color: #fff;
+    color: #777;
+
+    &:hover {
+      filter: brightness(90%);
+      background-color: #fff;
+    }
+  }
+
+  .facebook {
+    background-color: #3b5998;
+
+    &:hover {
+      filter: brightness(80%);
+      background-color: #3b5998;
+    }
+  }
 }

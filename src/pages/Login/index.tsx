@@ -1,7 +1,7 @@
 import './index.scss';
 import React from 'react';
 import { LoginForm } from './LoginForm';
-import { Button } from '../../components/Button';
+import { OtherActions } from './OtherActions';
 
 export const Login = () => {
   return (
@@ -10,11 +10,7 @@ export const Login = () => {
         <h1 className="text-4xl text-center pb-4">Login</h1>
         <LoginForm />
         <hr />
-        <div className="otherActions">
-          <Button disabled>Register</Button>
-          <Button disabled>Google</Button>
-          <Button disabled>Facebook</Button>
-        </div>
+        <OtherActions />
       </div>
     </div>
   );

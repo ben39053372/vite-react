@@ -5,6 +5,7 @@ import { Label } from '../../components/Label';
 import { Input } from '../../components/Input';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../components/Button';
+import { useHistory } from 'react-router-dom';
 
 interface LoginFormValues {
   email: string;
@@ -35,6 +36,7 @@ const validate = (values: LoginFormValues) => {
 
 export const LoginForm = () => {
   const { t } = useTranslation();
+  const history = useHistory();
   const loginForm = useFormik<LoginFormValues>({
     initialValues: {
       email: '',
@@ -45,6 +47,11 @@ export const LoginForm = () => {
       alert(JSON.stringify(values, null, 2));
     },
   });
+
+  const handleSignInClick = () => {
+    history.push('/');
+  };
+
   return (
     <form onSubmit={loginForm.handleSubmit}>
       <Label className="asd">{t('email')}</Label>
@@ -54,6 +61,8 @@ export const LoginForm = () => {
         placeholder={t('place input', { somethings: t('email') })}
         {...loginForm.getFieldProps('email')}
       />
+
+      {/* error message */}
       {loginForm.touched.email && (
         <div className="error">{loginForm.errors.email}</div>
       )}
@@ -67,12 +76,17 @@ export const LoginForm = () => {
         placeholder={t('place input', { somethings: t('password') })}
         {...loginForm.getFieldProps('password')}
       />
+
+      {/* error message */}
       {loginForm.touched.password && (
         <div className="error">{loginForm.errors.password}</div>
       )}
+
       <div className="actions">
-        <Button type="submit">{t('Sign In')}</Button>
         <a className="textButton">{t('Forgot Password')}?</a>
+        <Button onClick={handleSignInClick} type="submit">
+          {t('Sign In')}
+        </Button>
       </div>
     </form>
   );

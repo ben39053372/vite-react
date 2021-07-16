@@ -4,6 +4,8 @@
 
 #root {
   min-height: 100vh;
+
+  @apply flex bg-blue-200 min-h-screen w-screen;
 }
 
 @layer base {
@@ -23,5 +25,9 @@
 @layer utilities {
   .error {
     color: theme('colors.error');
+  }
+
+  .paper {
+    @apply bg-white px-8 pt-6 pb-8 shadow-xl container rounded w-full max-w-xs m-auto;
   }
 }

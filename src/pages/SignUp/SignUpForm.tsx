@@ -135,7 +135,7 @@ export const SignUpForm = () => {
         <Link className="textButton" to="/login">
           {t('I have account')}
         </Link>
-        <Button onClick={handleSignInClick} type="submit">
+        <Button onClick={handleSignInClick} variant="primary" type="submit">
           {t('Sign In')}
         </Button>
       </div>

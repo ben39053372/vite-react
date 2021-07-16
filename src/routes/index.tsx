@@ -7,19 +7,19 @@ import { Page1 } from '../pages/page1';
 import { Page2 } from '../pages/page2';
 import { Page3 } from '../pages/page3';
 import { Private } from '../pages/Private';
+import { SignUp } from '../pages/SignUp';
 
 const isUserLogin = () => {
-  console.log("isUserLogin")
-  return false
-}
-
+  console.log('isUserLogin');
+  return false;
+};
 
 export const routes: RouteConfig[] = [
   {
     name: 'Main',
     path: '/',
     exact: true,
-    component: Main
+    component: Main,
   },
   {
     name: 'Page 1',
@@ -39,11 +39,16 @@ export const routes: RouteConfig[] = [
   {
     name: 'Private',
     path: '/private',
-    render: (props) => isUserLogin() ? <Private /> : <Redirect to="/login" />
+    render: (props) => (isUserLogin() ? <Private /> : <Redirect to="/login" />),
   },
   {
-    path: "/login",
-    name: "Login",
-    component: Login
-  }
+    path: '/login',
+    name: 'Login',
+    component: Login,
+  },
+  {
+    path: '/signUp',
+    name: 'Sign Up',
+    component: SignUp,
+  },
 ];

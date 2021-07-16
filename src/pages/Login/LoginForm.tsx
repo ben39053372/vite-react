@@ -54,7 +54,7 @@ export const LoginForm = () => {
 
   return (
     <form onSubmit={loginForm.handleSubmit}>
-      <Label className="asd">{t('email')}</Label>
+      <Label>{t('email')}</Label>
       <Input
         id="email"
         type="email"

@@ -5,7 +5,7 @@ import { Label } from '../../components/Label';
 import { Input } from '../../components/Input';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../components/Button';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 interface LoginFormValues {
   email: string;
@@ -83,7 +83,9 @@ export const LoginForm = () => {
       )}
 
       <div className="actions">
-        <a className="textButton">{t('Forgot Password')}?</a>
+        <Link className="textButton" to="/forgotPassword">
+          {t('Forgot Password')}?
+        </Link>
         <Button onClick={handleSignInClick} variant="primary" type="submit">
           {t('Sign In')}
         </Button>

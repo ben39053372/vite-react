@@ -1,6 +1,7 @@
 import React from 'react';
 import { RouteConfig } from 'react-router-config';
 import { Redirect } from 'react-router-dom';
+import { ForgotPassword } from '../pages/ForgotPassword';
 import { Login } from '../pages/Login';
 import { Main } from '../pages/Main';
 import { Page1 } from '../pages/page1';
@@ -50,5 +51,10 @@ export const routes: RouteConfig[] = [
     path: '/signUp',
     name: 'Sign Up',
     component: SignUp,
+  },
+  {
+    path: '/forgotPassword',
+    name: 'Forgot Password',
+    component: ForgotPassword,
   },
 ];

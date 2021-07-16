@@ -9,6 +9,7 @@
           "tailwind"
         ]
       }
-    ]
+    ],
+    "declaration-bang-space-before": null
   }
 }

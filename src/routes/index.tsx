@@ -1,14 +1,6 @@
 import React from 'react';
 import { RouteConfig } from 'react-router-config';
 import { Redirect } from 'react-router-dom';
-import { ForgotPassword } from '../pages/ForgotPassword';
-import { Login } from '../pages/Login';
-import { Index } from '../pages/Index';
-import { Page1 } from '../pages/page1';
-import { Page2 } from '../pages/page2';
-import { Page3 } from '../pages/page3';
-import { Private } from '../pages/Private';
-import { SignUp } from '../pages/SignUp';
 import { MainLayout } from '../Layout/MainLayout';
 
 const isUserLogin = () => {
@@ -20,17 +12,17 @@ export const routes: RouteConfig[] = [
   {
     path: '/login',
     name: 'Login',
-    component: Login,
+    component: React.lazy(() => import('../pages/Login')),
   },
   {
     path: '/signUp',
     name: 'Sign Up',
-    component: SignUp,
+    component: React.lazy(() => import('../pages/SignUp')),
   },
   {
     path: '/forgotPassword',
     name: 'Forgot Password',
-    component: ForgotPassword,
+    component: React.lazy(() => import('../pages/ForgotPassword')),
   },
   {
     component: MainLayout,
@@ -40,28 +32,32 @@ export const routes: RouteConfig[] = [
         name: 'Main',
         path: '/',
         exact: true,
-        component: Index,
+        component: React.lazy(() => import('../pages/Index')),
       },
       {
         name: 'Page 1',
         path: '/page1',
-        component: Page1,
+        component: React.lazy(() => import('../pages/page1')),
       },
       {
         name: 'Page 2',
         path: '/page2',
-        component: Page2,
+        component: React.lazy(() => import('../pages/page2')),
       },
       {
         name: 'Page 3',
         path: '/page3',
-        component: Page3,
+        component: React.lazy(() => import('../pages/page3')),
       },
       {
         name: 'Private',
         path: '/private',
         render: (props) =>
-          isUserLogin() ? <Private /> : <Redirect to="/login" />,
+          isUserLogin() ? (
+            React.lazy(() => import('../pages/Private'))
+          ) : (
+            <Redirect to="/login" />
+          ),
       },
     ],
   },

@@ -14,3 +14,5 @@ export const MainLayout: ComponentType<RouteConfigComponentProps<any>> = ({
     </div>
   );
 };
+
+export default MainLayout;

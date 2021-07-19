@@ -1,10 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { CssBaseline } from '@material-ui/core';
 import './i18n';
 import './styles/common/index.scss';
+
+import { CssBaseline } from '@material-ui/core';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+
 import App from './App';
 import { store } from './redux/store';
 

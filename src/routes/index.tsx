@@ -1,5 +1,5 @@
 import React from 'react';
-import { renderRoutes, RouteConfig } from 'react-router-config';
+import { RouteConfig } from 'react-router-config';
 import { Redirect } from 'react-router-dom';
 import { ForgotPassword } from '../pages/ForgotPassword';
 import { Login } from '../pages/Login';
@@ -10,7 +10,6 @@ import { Page3 } from '../pages/page3';
 import { Private } from '../pages/Private';
 import { SignUp } from '../pages/SignUp';
 import { MainLayout } from '../Layout/MainLayout';
-import { EmptyLayout } from '../Layout/EmptyLayout';
 
 const isUserLogin = () => {
   console.log('isUserLogin');

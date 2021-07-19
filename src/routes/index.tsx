@@ -1,8 +1,9 @@
+import loadable from '@loadable/component';
 import React from 'react';
 import { RouteConfig } from 'react-router-config';
 import { Redirect } from 'react-router-dom';
+
 import { MainLayout } from '../Layout/MainLayout';
-import loadable from '@loadable/component';
 
 const isUserLogin = () => {
   console.log('isUserLogin');
@@ -53,12 +54,13 @@ export const routes: RouteConfig[] = [
       {
         name: 'Private',
         path: '/private',
-        render: (props) =>
-          isUserLogin() ? (
+        render: function render() {
+          return isUserLogin() ? (
             loadable(() => import('../pages/Private'))
           ) : (
             <Redirect to="/login" />
-          ),
+          );
+        },
       },
     ],
   },

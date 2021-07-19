@@ -1,11 +1,12 @@
-import React from 'react';
 import { useFormik } from 'formik';
 import i18next from 'i18next';
-import { Label } from '../../components/Label';
-import { Input } from '../../components/Input';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from '../../components/Button';
 import { Link, useHistory } from 'react-router-dom';
+
+import { Button } from '../../components/Button';
+import { Input } from '../../components/Input';
+import { Label } from '../../components/Label';
 
 interface SignUpFormValues {
   email: string;
@@ -19,7 +20,7 @@ const validate = (values: SignUpFormValues) => {
 
   // email
   const emailFormat =
-    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
   if (!values.email) {
     errors.email = 'Required';
   } else if (!emailFormat.test(values.email)) {

@@ -1,5 +1,7 @@
 import './index.scss';
+
 import React from 'react';
+
 import { LoginForm } from './LoginForm';
 import { OtherActions } from './OtherActions';
 

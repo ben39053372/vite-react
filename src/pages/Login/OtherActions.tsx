@@ -1,9 +1,10 @@
 import React from 'react';
-import { Button } from '../../components/Button';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
-import { GoogleLoginBtn } from '../../components/Button/GoogleLoginBtn';
+
+import { Button } from '../../components/Button';
 import { FacebookLoginBtn } from '../../components/Button/FacebookLoginBtn';
+import { GoogleLoginBtn } from '../../components/Button/GoogleLoginBtn';
 
 export const OtherActions = () => {
   const { t } = useTranslation();

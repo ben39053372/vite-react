@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link, useRouteMatch } from 'react-router-dom';
-import { configs } from '../../config';
+import { Link } from 'react-router-dom';
 
+import { configs } from '../../config';
 import styles from './index.module.scss';
 
 export const NavBar = () => {
-  const match = useRouteMatch('/page1');
   return (
     <nav className={styles.navBar}>
       <div className={styles.brand}>
-        <img className={styles.logo} src={configs.logo} />
+        <img alt="logo" className={styles.logo} src={configs.logo} />
         <h1>{configs.companyName}</h1>
       </div>
       <div className={styles.routeList}>

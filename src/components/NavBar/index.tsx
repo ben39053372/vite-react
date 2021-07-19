@@ -6,7 +6,6 @@ import styles from './index.module.scss';
 
 export const NavBar = () => {
   const match = useRouteMatch('/page1');
-  console.log(match);
   return (
     <nav className={styles.navBar}>
       <div className={styles.brand}>

@@ -2,6 +2,7 @@ import React from 'react';
 import { RouteConfig } from 'react-router-config';
 import { Redirect } from 'react-router-dom';
 import { MainLayout } from '../Layout/MainLayout';
+import loadable from '@loadable/component';
 
 const isUserLogin = () => {
   console.log('isUserLogin');
@@ -12,17 +13,17 @@ export const routes: RouteConfig[] = [
   {
     path: '/login',
     name: 'Login',
-    component: React.lazy(() => import('../pages/Login')),
+    component: loadable(() => import('../pages/Login')),
   },
   {
     path: '/signUp',
     name: 'Sign Up',
-    component: React.lazy(() => import('../pages/SignUp')),
+    component: loadable(() => import('../pages/SignUp')),
   },
   {
     path: '/forgotPassword',
     name: 'Forgot Password',
-    component: React.lazy(() => import('../pages/ForgotPassword')),
+    component: loadable(() => import('../pages/ForgotPassword')),
   },
   {
     component: MainLayout,
@@ -32,29 +33,29 @@ export const routes: RouteConfig[] = [
         name: 'Main',
         path: '/',
         exact: true,
-        component: React.lazy(() => import('../pages/Index')),
+        component: loadable(() => import('../pages/Index')),
       },
       {
         name: 'Page 1',
         path: '/page1',
-        component: React.lazy(() => import('../pages/page1')),
+        component: loadable(() => import('../pages/page1')),
       },
       {
         name: 'Page 2',
         path: '/page2',
-        component: React.lazy(() => import('../pages/page2')),
+        component: loadable(() => import('../pages/page2')),
       },
       {
         name: 'Page 3',
         path: '/page3',
-        component: React.lazy(() => import('../pages/page3')),
+        component: loadable(() => import('../pages/page3')),
       },
       {
         name: 'Private',
         path: '/private',
         render: (props) =>
           isUserLogin() ? (
-            React.lazy(() => import('../pages/Private'))
+            loadable(() => import('../pages/Private'))
           ) : (
             <Redirect to="/login" />
           ),

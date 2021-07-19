@@ -3,4 +3,4 @@
 
 # npm test
 npx stylelint --fix **/*.{css,scss,sass}
-npx eslint --fix
+npx eslint "src/**/*.{tsx,ts,jsx,js}" --fix
